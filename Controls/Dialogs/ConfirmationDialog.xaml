@@ -64,11 +64,11 @@
 
                             </Style>
                         </Grid.Resources>
-                        <Button Click="CancelButton_Click"
+                        <Button Click="Cancel_Button_Click"
                             Margin="0 0 8 0">
                             <TextBlock Text="Cancel"/>
                         </Button>
-                        <Button Click="Button_Click"
+                        <Button Click="Ok_Button_Click"
                                 Grid.Column="1">
                             <TextBlock Text="Ok" />
                         </Button>

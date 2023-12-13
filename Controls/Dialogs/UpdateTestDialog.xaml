@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:controls="clr-namespace:TestingPlatformWpfClient.Controls"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
 
@@ -36,23 +35,18 @@
             <Border CornerRadius="8" BorderThickness="1">
                 <StackPanel Margin="0,0,0,0">
                     <TextBlock x:Name="DialogHeader" Margin="20 20 0 0"
-                               Text="Update Player" Foreground="White" FontSize="16" />
+                               Text="Update Test" Foreground="White" FontSize="16" />
                     <Border Height="1"
                             Margin="12 12 12 0" />
                     <StackPanel Grid.Row="1" Margin="0,15,0,0" HorizontalAlignment="Center">
-                        <TextBlock Text="First Name" />
-                        <TextBox x:Name="FirstNameTextBox" Width="300" Margin="0,5" Text="{Binding FirstName}" />
-                        <TextBlock Text="Last name" />
-                        <TextBox x:Name="LastNameTextBox" Width="300" Margin="0,5" Text="{Binding LastName}" />
-                        <TextBlock Text="Date of Birth" />
-                        <DatePicker x:Name="BirthDatePicker" Width="300" Margin="0,5"
-                                    SelectedDate="{Binding DateOfBirth}" />
-                        <TextBlock Text="Country" />
-                        <TextBox x:Name="CountryTextBox" Width="300" Margin="0,5" Text="{Binding Country}" />
-                        <TextBlock Text="Height" />
-                        <TextBlock Text="Weight" />
-                        <TextBlock Text="Position" />
-                        <TextBox x:Name="PositionTextBox" Width="300" Margin="0,5" Text="{Binding Position}" />
+                        <TextBlock Text="Name" />
+                        <TextBox x:Name="NameTextBox" Width="300" Margin="0,5" Text="{Binding Name}"/>
+                        <TextBlock Text="Subject" />
+                        <TextBox x:Name="SubjectTextBox" Width="300" Margin="0,5" Text="{Binding Subject}"/>
+                        <TextBlock Text ="Duration" />
+                        <TextBox x:Name="DurationTextBox" Width="300" Margin="0,5" Text="{Binding Duration}"/>
+                        <TextBlock Text ="Difficulty" />
+                        <TextBox x:Name="DifficultyTextBox" Width="300" Margin="0,5" Text="{Binding Difficulty}"/>
                     </StackPanel>
                     <Grid
                         Margin="10 20 10 0"
@@ -80,7 +74,7 @@
                             <TextBlock Text="Cancel" />
                         </Button>
                         <Button Click="Button_Click" Grid.Column="1">
-                            <TextBlock Text="Ok" />
+                            <TextBlock Text="Save" />
                         </Button>
                     </Grid>
                 </StackPanel>

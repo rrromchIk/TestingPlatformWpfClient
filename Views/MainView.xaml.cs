@@ -5,15 +5,15 @@ using TestingPlatformWpfClient.ViewModels;
 
 namespace TestingPlatformWpfClient.Views {
     public partial class MainView : Page {
-        private MainViewModel MainViewModel { get; }
+        public MainViewModel ViewModel { get; }
         public MainView() {
             InitializeComponent();
-            MainViewModel = App.Services.GetRequiredService<MainViewModel>();
-            DataContext = MainViewModel;
+            ViewModel = App.Services.GetRequiredService<MainViewModel>();
+            DataContext = ViewModel;
         }
         
         private async void Page_Loaded(object sender, RoutedEventArgs e) {
-            await MainViewModel.InitializeAsync();
+            await ViewModel.InitializeAsync();
         }
     }
 }

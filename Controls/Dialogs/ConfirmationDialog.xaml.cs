@@ -9,29 +9,28 @@ namespace TestingPlatformWpfClient.Controls.Dialogs {
             InitializeComponent();
         }
 
-        private TaskCompletionSource<ConfirmationDialogResult> dismissTaskSource = new();
+        private TaskCompletionSource<ConfirmationDialogResult> _dismissTaskSource = new();
 
         public async Task<ConfirmationDialogResult> ShowAsync(string message) {
             var dialogsContainer = MainWindow.Current.DialogsContainer;
             dialogsContainer.Content = this;
             messageTextBlock.Text = message;
             Visibility = Visibility.Visible;
-            dismissTaskSource = new TaskCompletionSource<ConfirmationDialogResult>();
-            var result = await dismissTaskSource.Task;
+            _dismissTaskSource = new TaskCompletionSource<ConfirmationDialogResult>();
+            var result = await _dismissTaskSource.Task;
             return result;
         }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e) {
+        private void Cancel_Button_Click(object sender, RoutedEventArgs e) {
             CloseDialog();
-            dismissTaskSource.TrySetResult(ConfirmationDialogResult.Cancelled);
+            _dismissTaskSource.TrySetResult(ConfirmationDialogResult.Cancelled);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) {
+        private void Ok_Button_Click(object sender, RoutedEventArgs e) {
             CloseDialog();
-            dismissTaskSource.TrySetResult(ConfirmationDialogResult.Confirmed);
+            _dismissTaskSource.TrySetResult(ConfirmationDialogResult.Confirmed);
         }
-
-
+        
         private void CloseDialog() {
             Visibility = Visibility.Collapsed;
             if (MainWindow.Current.DialogsContainer.Content == this) {

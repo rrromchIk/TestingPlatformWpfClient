@@ -17,7 +17,8 @@ namespace TestingPlatformWpfClient {
 
             Current = this;
             _navigationService = App.Services.GetRequiredService<INavigationService>();
-            DataContext = App.Services.GetRequiredService<ShellViewModel>();
+            ShellViewModel = App.Services.GetRequiredService<ShellViewModel>();
+            DataContext = ShellViewModel;
         }
         
         private void Window_Loaded(object sender, RoutedEventArgs e) {

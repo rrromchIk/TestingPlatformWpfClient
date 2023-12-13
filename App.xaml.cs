@@ -17,7 +17,8 @@ namespace TestingPlatformWpfClient {
             services.AddSingleton<CommonHttpClientService>();
             services.AddSingleton<ITestService, TestService>();
             services.AddSingleton<INavigationService, NavigationService>();
-            
+
+            services.AddSingleton<ShellViewModel>();
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<TestCreationViewModel>();
 

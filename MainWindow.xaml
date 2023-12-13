@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:TestingPlatformWpfClient.ViewModels"
-        d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel}"
+        d:DataContext="{d:DesignInstance Type=viewModels:ShellViewModel}"
         mc:Ignorable="d"
         Title="Testing" Height="1200" Width="1400"
         Loaded="Window_Loaded">
@@ -38,9 +38,12 @@
                         </Style>
                     </StackPanel.Resources>
                     <Button Content="Tests"
-                            Command="{Binding OpenPlayersViewCommand}" Cursor="Hand" Padding="10" Foreground="White" />
+                            Command="{Binding OpenTestViewCommand}"
+                            Cursor="Hand" Padding="10"
+                            Foreground="White" />
                     <Button Content="Add Test"
-                            Command="{Binding OpenPlayerCreationViewCommand}" Cursor="Hand" Padding="10"
+                            Command="{Binding OpenTestCreationViewCommand}"
+                            Cursor="Hand" Padding="10"
                             Foreground="White" />
                 </StackPanel>
             </Grid>
